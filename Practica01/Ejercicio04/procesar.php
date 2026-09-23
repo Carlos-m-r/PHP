@@ -5,20 +5,23 @@
     //$resultField = $_POST["resultField"];
     $resultText = "";
 
-    $emptyName = is_empty($name);
+    $emptyName = empty($name);
     $validEmail = filter_var($email, FILTER_VALIDATE_EMAIL);
     $underEighteen = $age < 18;
 
     if($emptyName|| !$validEmail || $underEighteen){
             if ($emptyName) {
-                $resultText = $resultText . "No hay nombre\n";
-            } elseif (!$validEmail) {
-                $resultText = $resultText . "Correo electronico inválido\n";
-            } elseif ($underEighteen) {
-                $resultText = $resultText . "Edad es menor a 18\n";
+                $resultText = $resultText . "<p>No hay nombre </p>";
+            }
+            if (!$validEmail) {
+                $resultText = $resultText . "<p>Correo electrónico inválido</p>";
+            }
+            if ($underEighteen) {
+                $resultText = $resultText . "<p>Edad es menor a 18</p>";
             }
         } else {
         $resultText = "Bienvenido!";
     }
-   // echo `<p>${resultText}</p>`; ¿?¿?
+
+    echo $resultText;
 
