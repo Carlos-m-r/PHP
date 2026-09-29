@@ -1,5 +1,5 @@
 <?php
-
+//crear agenda al inicio y llamar a la funcion saveContact cuando se pulse en el boton
 class Agenda {
     private $contacts;
 

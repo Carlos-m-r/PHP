@@ -8,7 +8,7 @@
     $emptyName = empty($name);
     $validEmail = filter_var($email, FILTER_VALIDATE_EMAIL);
     $underEighteen = $age < 18;
-
+/*
     if($emptyName|| !$validEmail || $underEighteen){
             if ($emptyName) {
                 $resultText = $resultText . "<p>No hay nombre </p>";
@@ -22,6 +22,10 @@
         } else {
         $resultText = "Bienvenido!";
     }
+*/
+    session_start();
+    $_SESSION["name"] = $name;
 
-    echo $resultText;
+    header('Location: bienvenida.php');
 
+    exit;

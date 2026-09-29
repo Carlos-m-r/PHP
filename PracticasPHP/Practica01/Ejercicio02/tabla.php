@@ -7,6 +7,6 @@
       echo "La tabla del 0 siempre es 0";
     } else {
         for ($i = 0; $i <= 10; $i++) {
-            echo $i . " x " . $a . " = " . $i*$a ."\n";
+            echo "<p>" . $i . " x " . $a . " = " . $i*$a ."</p>";
         }
     }
